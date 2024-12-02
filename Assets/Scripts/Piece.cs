@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using YG;
 
 public class Piece : MonoBehaviour
 {
@@ -14,8 +15,16 @@ public class Piece : MonoBehaviour
         imageObject.GetComponent<SpriteRenderer>().sprite = GameManager.Instance.chosenSprite;
         imageObject.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
         originalPosition = new(transform.position.x, transform.position.y, 0);
-        transform.LeanMoveLocal(new Vector2(Random.Range(GameManager.Instance.pieceStartPositionTopLeft.x, GameManager.Instance.pieceStartPositionBottomRight.x),
-            Random.Range(GameManager.Instance.pieceStartPositionTopLeft.y, GameManager.Instance.pieceStartPositionBottomRight.y)), GameManager.Instance.animationTime);
+        Vector2 newPos = new Vector2(Random.Range(GameManager.Instance.pieceStartPositionTopLeft.x, GameManager.Instance.pieceStartPositionBottomRight.x),
+            Random.Range(GameManager.Instance.pieceStartPositionTopLeft.y, GameManager.Instance.pieceStartPositionBottomRight.y));
+        if (YandexGame.EnvironmentData.isDesktop)
+        {
+            transform.LeanMoveLocal(newPos, GameManager.Instance.animationTime);
+        }
+        else
+        {
+            transform.position = newPos;
+        }
     }
 
     public void Selected()

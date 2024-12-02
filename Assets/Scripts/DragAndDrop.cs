@@ -13,12 +13,12 @@ public class DragAndDrop : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 0f);
-            if (hit.transform != null)
+            RaycastHit2D[] hit = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 0f);
+            if (hit[0].transform != null)
             {
-                if (hit.transform.CompareTag("Piece") && !hit.transform.GetComponent<Piece>().isPositioned)
+                if (hit[0].transform.CompareTag("Piece") && !hit[0].transform.GetComponent<Piece>().isPositioned)
                 {
-                    selectedPiece = hit.transform.gameObject;
+                    selectedPiece = hit[0].transform.gameObject;
                     selectedPiece.GetComponent<Piece>().Selected();
                     orderNumber++;
                     selectedPiece.GetComponent<SortingGroup>().sortingOrder = orderNumber;
@@ -26,7 +26,7 @@ public class DragAndDrop : MonoBehaviour
                     pos.z = -orderNumber / 1000f;
                     selectedPiece.transform.position = pos;
                 }
-                else if (hit.transform.name == "Background")
+                else if (hit[0].transform.name == "Background")
                 {
                     GetComponent<CameraSystem>().FollowMouse(true);
                 }

@@ -25,7 +25,7 @@ public class CameraSystem : MonoBehaviour
         {
             mainCamera.orthographicSize = cameraInitialSize * zoomRatio * (desiredRatio / currentRatio);
         }
-        
+
         // Apply different zoom methods
         ApplyTouchZoom();
         ApplyMouseWheelZoom();
@@ -113,7 +113,7 @@ public class CameraSystem : MonoBehaviour
         }
     }
 
-    public void ZoomIn(float zoomVal = .0125f)
+    public void ZoomIn(float zoomVal)
     {
         if (zoomRatio > zoomMinBoundary)
         {
@@ -122,12 +122,31 @@ public class CameraSystem : MonoBehaviour
             UpdateBoundary();
         }
     }
+    public void ZoomIn()
+    {
+        if (zoomRatio > zoomMinBoundary)
+        {
+            zoomRatio -= .125f;
+            ApplyZoomBoundary();
+            UpdateBoundary();
+        }
+    }
 
-    public void ZoomOut(float zoomVal = .125f)
+    public void ZoomOut(float zoomVal)
     {
         if (zoomRatio < 1)
         {
             zoomRatio += zoomVal;
+            ApplyZoomBoundary();
+            UpdateBoundary();
+            transform.position = ApplyPositionBoundary(transform.position);
+        }
+    }
+    public void ZoomOut()
+    {
+        if (zoomRatio < 1)
+        {
+            zoomRatio += 0.125f;
             ApplyZoomBoundary();
             UpdateBoundary();
             transform.position = ApplyPositionBoundary(transform.position);
