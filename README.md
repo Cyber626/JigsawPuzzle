@@ -8,8 +8,6 @@ Welcome to the Jigsaw Puzzle Game! This game offers a fun and challenging experi
 - [Installation](#installation)
 - [How to Play](#how-to-play)
 - [Levels of Difficulty](#levels-of-difficulty)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 The Jigsaw Puzzle Game is designed to provide an engaging and relaxing experience. Whether you're a beginner or a puzzle master, there's a level for you.
@@ -41,14 +39,3 @@ To install the game, follow these steps:
 - **Hard**: 96 pieces
 - **Expert**: 150 pieces
 - **Master**: 384 pieces
-
-## Contributing
-We welcome contributions from the community! If you'd like to contribute, please follow these steps:
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature/your-feature-name`
-3. Make your changes and commit them: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin feature/your-feature-name`
-5. Open a pull request.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
