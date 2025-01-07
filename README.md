@@ -8,7 +8,6 @@ Welcome to the Jigsaw Puzzle Game! This game offers a fun and challenging experi
 - [Installation](#installation)
 - [How to Play](#how-to-play)
 - [Levels of Difficulty](#levels-of-difficulty)
-- [Video Preview](#video-preview)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -37,16 +36,11 @@ To install the game, follow these steps:
 4. Use the timer to challenge yourself and improve your puzzle-solving skills.
 
 ## Levels of Difficulty
-- **Easy**: 16 pieces
-- **Medium**: 36 pieces
-- **Hard**: 64 pieces
-- **Expert**: 100 pieces
-- **Master**: 144 pieces
-
-## Video Preview
-Check out this video preview to see the game in action:
-
-![Video Preview](https://drive.google.com/file/d/1eloCtMzEHcREd3zYT-s1b6Ga8uir2dp6/view?usp=drive_link)
+- **Easy**: 24 pieces
+- **Medium**: 54 pieces
+- **Hard**: 96 pieces
+- **Expert**: 150 pieces
+- **Master**: 384 pieces
 
 ## Contributing
 We welcome contributions from the community! If you'd like to contribute, please follow these steps:
